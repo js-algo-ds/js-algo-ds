@@ -13,7 +13,7 @@ describe('twoSum', () => {
   describe('unmatched target number', () => { 
     it('returns empty array', () => {
       const inputArray = [2,7,11,15];
-      const target = 22;
+      const target = 20;
       const expectedResult = [];
       expect(twoSum(inputArray, target)).toEqual(expectedResult);
     })
