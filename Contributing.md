@@ -62,7 +62,7 @@ The process of adding, committing, and pushing your code will look like this:
 
 ## Continuous Integration
 
-This project has continuous integration set up through [Travis CI](https://travis-ci.com/)
+This project has continuous integration set up through [Github Actions](https://resources.github.com/ci-cd/)
 
 ## Cutting a New Release
 
