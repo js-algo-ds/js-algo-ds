@@ -1,5 +1,5 @@
 {
-  "name": "algodsjs",
+  "name": "js-algo-ds",
   "version": "0.0.1",
   "description": "Data structure and algorithm problems in a library",
   "main": "dist/index_bundle.js",
@@ -7,6 +7,8 @@
     "build": "webpack"
   },
   "keywords": [
+    "js-algo-ds",
+    "jsalgods",
     "algods",
     "algo-ds",
     "dsalgo",
@@ -24,12 +26,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tanvir-rahman/algods.git"
+    "url": "git+https://github.com/Tanvir-rahman/js-algo-ds.git"
   },
   "bugs": {
-    "url": "https://github.com/Tanvir-rahman/algods/issues"
+    "url": "https://github.com/Tanvir-rahman/js-algo-ds/issues"
   },
-  "homepage": "https://github.com/Tanvir-rahman/algods#readme",
+  "homepage": "https://github.com/Tanvir-rahman/js-algo-ds#readme",
   "author": "Tanvir Rahman <rahmantanvir25558@gmail.com>",
   "license": "MIT",
   "private": false,
