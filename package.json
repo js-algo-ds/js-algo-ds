@@ -1,0 +1,10 @@
+{
+  "name": "algods",
+  "version": "0.0.1",
+  "description": "All data structure and algorithm problems in a library",
+  "main": "src/index.js",
+  "repository": "git@github.com:Tanvir-rahman/algods.git",
+  "author": "Tanvir Rahman <rahmantanvir25558@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
