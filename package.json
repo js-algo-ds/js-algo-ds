@@ -1,7 +1,7 @@
 {
-  "name": "algods",
+  "name": "algodsjs",
   "version": "0.0.1",
-  "description": "All data structure and algorithm problems in a library",
+  "description": "Data structure and algorithm problems in a library",
   "main": "dist/index_bundle.js",
   "scripts": {
     "build": "webpack"
