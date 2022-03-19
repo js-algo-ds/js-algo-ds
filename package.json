@@ -2,9 +2,42 @@
   "name": "algods",
   "version": "0.0.1",
   "description": "All data structure and algorithm problems in a library",
-  "main": "src/index.js",
-  "repository": "git@github.com:Tanvir-rahman/algods.git",
+  "main": "dist/index_bundle.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [
+    "algods",
+    "algo-ds",
+    "dsalgo",
+    "ds-algo",
+    "algodsjs",
+    "algorithms",
+    "data structures",
+    "javascript",
+    "js",
+    "problem solving",
+    "problem solver",
+    "leetcode",
+    "npm",
+    "yarn"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tanvir-rahman/algods.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tanvir-rahman/algods/issues"
+  },
+  "homepage": "https://github.com/Tanvir-rahman/algods#readme",
   "author": "Tanvir Rahman <rahmantanvir25558@gmail.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  }
 }
