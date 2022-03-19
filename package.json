@@ -11,9 +11,9 @@
     "lint": "eslint src --fix",
     "test": "jest --colors --notify",
     "test:watch": "jest --watch",
-    "test:coverage": "npm run test -- --coverage",
-    "test:badges": "npm run test:coverage  && jest-coverage-badges",
-    "publish": "npm run lint && npm run test && npm run build && npm run test:badges && npm publish"
+    "test:coverage": "yarn run test -- --coverage",
+    "test:badges": "yarn run test:coverage  && jest-coverage-badges",
+    "publish": "yarn run lint && yarn run test && yarn run build && yarn run test:badges && yarn publish"
   },
   "keywords": [
     "js-algo-ds",
