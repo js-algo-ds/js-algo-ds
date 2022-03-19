@@ -2,9 +2,18 @@
   "name": "js-algo-ds",
   "version": "0.0.1",
   "description": "Data structure and algorithm problems in a library",
-  "main": "dist/index_bundle.js",
+  "main": "./js-algo-ds.cjs.js",
+  "module": "./js-algo-ds.esm.js",
+  "browser": "./js-algo-ds.umd.js",
   "scripts": {
-    "build": "webpack"
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "lint": "eslint src --fix",
+    "test": "jest --colors --notify",
+    "test:watch": "jest --watch",
+    "test:coverage": "npm run test -- --coverage",
+    "test:badges": "npm run test:coverage  && jest-coverage-badges",
+    "publish": "npm run lint && npm run test && npm run build && npm run test:badges && npm publish"
   },
   "keywords": [
     "js-algo-ds",
@@ -36,10 +45,14 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@babel/core": "^7.17.8",
-    "@babel/preset-env": "^7.16.11",
-    "babel-loader": "^8.2.3",
-    "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2"
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.11.0",
+    "jest": "26.5.3",
+    "jest-coverage-badges": "^1.1.2",
+    "rollup": "2.32.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-terser": "7.0.2"
   }
 }
