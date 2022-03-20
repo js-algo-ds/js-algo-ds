@@ -13,7 +13,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "yarn run test -- --coverage",
     "test:badges": "yarn run test:coverage  && jest-coverage-badges",
-    "publish": "yarn run lint && yarn run test && yarn run build && yarn run test:badges && yarn publish"
+    "release": "yarn run lint && yarn run test:badges && yarn run build && yarn publish"
   },
   "keywords": [
     "js-algo-ds",
