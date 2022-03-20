@@ -1,6 +1,6 @@
 {
   "name": "js-algo-ds",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Data structure and algorithm problems in a library",
   "main": "./js-algo-ds.cjs.js",
   "module": "./js-algo-ds.esm.js",
