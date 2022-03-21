@@ -2,18 +2,22 @@
   "name": "js-algo-ds",
   "version": "0.0.2",
   "description": "Data structure and algorithm problems in a library",
-  "main": "./js-algo-ds.cjs.js",
-  "module": "./js-algo-ds.esm.js",
-  "browser": "./js-algo-ds.umd.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "browser": "dist/umd/js-algo-ds.umd.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "lint": "eslint src --fix",
+    "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,md}\"",
+    "prettier-watch": "onchange \"**/*.{js,jsx,ts,tsx,md}\" -- prettier --write {{changed}}",
+    "lint": "run-p eslint prettier",
     "test": "jest --colors --notify",
     "test:watch": "jest --watch",
     "test:coverage": "yarn run test -- --coverage",
-    "test:badges": "yarn run test:coverage  && jest-coverage-badges",
-    "release": "yarn run lint && yarn run test:badges && yarn run build && yarn publish"
+    "test:badges": "run-p test:coverage jest-coverage-badges",
+    "release": "run-p lint  test:badges build publish",
+    "prepare": "husky install"
   },
   "keywords": [
     "js-algo-ds",
@@ -45,15 +49,29 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
+    "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
+    "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^15.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.5.1",
     "eslint": "^7.11.0",
+    "husky": "^7.0.4",
     "jest": "26.5.3",
     "jest-coverage-badges": "^1.1.2",
+    "lint-staged": "^12.3.7",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "prettier": "2.6.0",
     "rollup": "2.32.0",
     "rollup-plugin-eslint": "^7.0.0",
-    "rollup-plugin-terser": "7.0.2"
-  }
+    "rollup-plugin-terser": "7.0.2",
+    "stylelint": "^14.6.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^25.0.0"
+  },
+  "files": [
+    "dist"
+  ]
 }

@@ -7,11 +7,12 @@
 JavaScript implementations of Data Structure, Algorithms and Programming Problems from various sites.
 Sites like LeetCode, HackerRank, CodeChef, SPOJ, Codewars etc.
 
-This project will help users to reuse concepts from these sites. 
+This project will help users to reuse concepts from these sites.
 
 ## Algorithms
 
 ### LeetCode
+
 #### Easy
 
 - [Two Sum](src/twoSum/index.js)
@@ -45,5 +46,6 @@ Please see the [Contributing Guidelines](CONTRIBUTING.md).
 The [Code of Conduct](CODE_OF_CONDUCT.md) can be found here.
 
 ## Inspired By / Reference
- - [thawkin3](https://github.com/thawkin3/js-data-structures-and-algorithms)
- - Contributors from [leetcode](https://leetcode.com/)
+
+- [thawkin3](https://github.com/thawkin3/js-data-structures-and-algorithms)
+- Contributors from [leetcode](https://leetcode.com/)

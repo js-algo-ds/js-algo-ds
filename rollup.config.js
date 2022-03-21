@@ -1,66 +1,69 @@
-import { terser } from "rollup-plugin-terser";
-import { eslint } from "rollup-plugin-eslint";
-import nodeResolve from "@rollup/plugin-node-resolve";
-import commonJs from "@rollup/plugin-commonjs";
-import fs from "fs";
-import pkg from "./package.json";
+import { terser } from 'rollup-plugin-terser';
+import { eslint } from 'rollup-plugin-eslint';
+import nodeResolve from '@rollup/plugin-node-resolve';
+import commonJs from '@rollup/plugin-commonjs';
+import babel from '@rollup/plugin-babel';
+import fs from 'fs';
+import pkg from './package.json';
 
 const plugins = [
   nodeResolve({
-    extensions: [".js", ".json"],
+    extensions: ['.js', '.json'],
   }),
-  commonJs({ extensions: [".js", ".json"] }),
+  commonJs({ extensions: ['.js', '.json'] }),
   eslint(),
+  babel({
+    babelHelpers: 'bundled',
+  }),
   terser(),
 ];
 
-const includeJSfiles = (fileName) =>
-  !fileName.endsWith(".test.js") && fileName.endsWith(".js");
+const includeJSfiles = fileName =>
+  !fileName.endsWith('.test.js') && fileName.endsWith('.js');
 
-const excludeFiles = (files) => (fileName) => !files.includes(fileName);
+const excludeFiles = files => fileName => !files.includes(fileName);
 
-const createConfigForFile = (fileName) => ({
+const createConfigForFile = fileName => ({
   input: `src/${fileName}/index.js`,
   output: {
     file: `./${fileName}.js`,
-    format: "cjs",
-    sourcemap: "inline",
-    exports: "auto",
+    format: 'cjs',
+    sourcemap: 'inline',
+    exports: 'named',
   },
   plugins,
 });
 
 const mainConfig = {
-  input: "src/js-ds-algo.js",
+  input: 'src/js-ds-algo.js',
   output: [
     {
       file: pkg.browser,
-      name: pkg.browser,
-      format: "umd",
-      sourcemap: "inline",
+      name: 'js-ds-algo',
+      esModule: false,
+      format: 'umd',
+      exports: 'named',
+      sourcemap: true,
     },
     {
       file: pkg.main,
-      format: "cjs",
-      sourcemap: "inline",
-      exports: "auto",
+      format: 'cjs',
+      exports: 'named',
+      sourcemap: true,
     },
     {
       file: pkg.module,
-      format: "es",
-      sourcemap: "inline",
+      exports: 'named',
+      sourcemap: true,
     },
   ],
   plugins,
 };
 
 const configs = fs
-  .readdirSync("./src/")
+  .readdirSync('./src/')
   .filter(includeJSfiles)
-  .filter(excludeFiles("js-ds-algo.js"))
+  .filter(excludeFiles('js-ds-algo.js'))
   .map(createConfigForFile);
 
-export default [
-  mainConfig,
-  ...configs,
-];
+export default [mainConfig, ...configs];

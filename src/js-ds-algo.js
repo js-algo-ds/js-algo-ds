@@ -1,5 +1,3 @@
 import { twoSum } from './twoSum';
 
-export {
-  twoSum
-}
+export { twoSum };
