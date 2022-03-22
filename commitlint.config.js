@@ -16,6 +16,7 @@ module.exports = {
         'revert',
         'test',
         'solution',
+        'setup',
       ],
     ],
   },
